@@ -6,7 +6,9 @@
     var segmenter = new TinySegmenter();
 
     convert.addEventListener('click', function() {
-        var words = segmenter.segment(text.value);
+        var s = text.value;
+        s = s.replace(/\s/g, '');
+        var words = segmenter.segment(s);
         var out = "(…";
         var i;
         for(i = 0; i < words.length; i++) {
