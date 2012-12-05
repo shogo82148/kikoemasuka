@@ -6,7 +6,10 @@
   </head>
   <body>
     <textarea rows="5" cols="100" id="text"></textarea>
-    <input type="button" value="きこえますか…？" id="convert">
+    <div>
+      <input type="button" value="きこえますか…？" id="convert">
+      <label><input id="word" type="checkbox">単語分割する</label>
+    </div>
     <div>
       <textarea rows="5" cols="100"id="result"></textarea>
     </div>
@@ -14,6 +17,7 @@
     <a href="https://twitter.com/share" class="twitter-share-button" data-via="shogo82148" data-lang="ja">ツイート</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     <script src="tinysegmenter.js" charset="UTF-8"></script>
+    <script src="tiny_segmenter-0.2.js" charset="UTF-8"></script>
     <script src="kikoemasuka.js" charset="UTF-8"></script>
     <script type="text/javascript">
 

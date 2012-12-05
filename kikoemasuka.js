@@ -3,17 +3,28 @@
     var result = document.getElementById('result');
     var convert = document.getElementById('convert');
     var tell = document.getElementById('tell');
+    var splitword = document.getElementById('word');
     var segmenter = new TinySegmenter();
+    var mysegmenter = new myTinySegmenter();
 
     convert.addEventListener('click', function() {
         var s = text.value;
         s = s.replace(/\s/g, '');
-        var words = segmenter.segment(s);
+        var words;
         var out = "(…";
         var i;
-        for(i = 0; i < words.length; i++) {
-            out += words[i] + '…';
-            if(Math.random() < 0.1) out += '…';
+        if(splitword.checked) {
+            words = segmenter.segment(s);
+            for(i = 0; i < words.length; i++) {
+                out += words[i];
+                if(Math.random() < 0.5) out += '…';
+            }
+        } else {
+            words = mysegmenter.segment(s);
+            for(i = 0; i < words.length; i++) {
+                out += words[i] + '…';
+                if(Math.random() < 0.1) out += '…';
+            }
         }
         out += '…)';
         result.value = out;
