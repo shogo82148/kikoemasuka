@@ -7,11 +7,11 @@
 
     convert.addEventListener('click', function() {
         var words = segmenter.segment(text.value);
-        var out = "(";
+        var out = "(…";
         var i;
         for(i = 0; i < words.length; i++) {
-            out += words[i];
-            if(Math.random() < 0.5) out += '…';
+            out += words[i] + '…';
+            if(Math.random() < 0.1) out += '…';
         }
         out += '…)';
         result.value = out;
